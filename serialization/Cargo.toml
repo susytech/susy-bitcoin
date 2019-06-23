@@ -1,0 +1,8 @@
+[package]
+name = "serialization"
+version = "0.1.0"
+authors = ["debris <marek.kotewicz@gmail.com>"]
+
+[dependencies]
+byteorder = {version="1.0", registry="susytech"}
+primitives = { path = "../primitives" }

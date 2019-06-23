@@ -1,0 +1,15 @@
+[package]
+name = "storage"
+version = "0.1.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+elastic-array = "0.6"
+parking_lot = "0.4"
+bit-vec = "0.4"
+lru-cache = {version="0.1",registry="susytech"}
+primitives = { path = "../primitives" }
+serialization = { path = "../serialization" }
+chain = { path = "../chain" }
+display_derive = "0.0.0"
+network = { path = "../network" }

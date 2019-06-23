@@ -1,0 +1,10 @@
+[package]
+name = "primitives"
+version = "0.1.0"
+authors = ["debris <marek.kotewicz@gmail.com>"]
+
+[dependencies]
+heapsize = {version="0.4",registry="susytech"}
+rustc-hex = "2"
+byteorder = {version="1.0", registry="susytech"}
+bigint = "1.0"

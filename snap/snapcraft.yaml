@@ -1,0 +1,31 @@
+name: susy-bitcoin
+# Get the version from the susy-bitcoin part.
+adopt-info: susy-bitcoin
+summary: The Susy Bitcoin client
+description: |
+  Bitcoin client written in Rust.
+
+grade: stable # must be 'stable' to release into candidate/stable channels
+confinement: strict
+
+apps:
+  susy-bitcoin:
+    command: susybtc
+    plugs: [home, network, network-bind, removable-media]
+
+parts:
+  susy-bitcoin:
+    source: https://octonion.institute/susytech/susy-bitcoin.git
+    source-tag: master
+    plugin: nil
+    build-packages:
+      - g++
+    override-pull: |
+       snapcraftctl pull
+       version="$(git describe --dirty --always)"
+       snapcraftctl set-version $version
+    override-build: |
+       curl https://sh.rustup.rs -sSf | sh -s -- -y
+       $HOME/.cargo/bin/cargo build -p susybtc --release
+       mkdir $SNAPCRAFT_PART_INSTALL/bin
+       mv target/release/susybtc $SNAPCRAFT_PART_INSTALL/bin/

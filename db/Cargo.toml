@@ -1,0 +1,20 @@
+[package]
+name = "db"
+version = "0.1.0"
+authors = ["Susytech <admin@superstring.ch>", "Paritytech <admin@parity.io>"]
+
+[dependencies]
+rocksdb = { git = "https://github.com/sofcore/rust-rocksdb" }
+elastic-array = "0.6"
+parking_lot = "0.4"
+log = {version="0.4",registry="susytech"}
+bit-vec = "0.4"
+lru-cache = {version="0.1",registry="susytech"}
+primitives = { path = "../primitives" }
+serialization = { path = "../serialization" }
+chain = { path = "../chain" }
+storage = { path = "../storage" }
+
+[dev-dependencies]
+tempdir = {version="0.3",registry="susytech"}
+test-data = { path = "../test-data" }

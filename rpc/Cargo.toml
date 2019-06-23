@@ -1,0 +1,33 @@
+[package]
+name = "rpc"
+version = "0.1.0"
+authors = ["Sofcore <admin@sofcore.io>"]
+
+[lib]
+
+[dependencies]
+log = {version="0.4",registry="susytech"}
+serde = {version = "1.0",registry="susytech"}
+serde_json = {version = "1.0",registry="susytech"}
+serde_derive = {version = "1.0",registry="susytech"}
+rustc-hex = "2"
+tokio-core = "0.1.1"
+susy-jsonrpc-core = { git = "https://github.com/sofcore/jsonrpc.git" }
+susy-jsonrpc-macros = { git = "https://github.com/sofcore/jsonrpc.git" }
+susy-jsonrpc-http-server = { git = "https://github.com/sofcore/jsonrpc.git" }
+
+sync = { path = "../sync" }
+serialization = { path = "../serialization" }
+chain = { path = "../chain" }
+primitives = { path = "../primitives" }
+p2p = { path = "../p2p" }
+network = { path = "../network" }
+storage = { path = "../storage" }
+db = { path = "../db" }
+miner = { path = "../miner" }
+verification = { path = "../verification" }
+script = { path = "../script" }
+keys = { path = "../keys" }
+
+[dev-dependencies]
+test-data = { path = "../test-data" }

@@ -1,0 +1,24 @@
+[package]
+name = "verification"
+version = "0.1.0"
+authors = ["Nikolay Volf <nikvolf@gmail.com>"]
+
+[dependencies]
+time = {version="0.1",registry="susytech"}
+lazy_static = {version="1.0",registry="susytech"}
+log = {version="0.4",registry="susytech"}
+rayon = {version="1.0",registry="susytech"}
+parking_lot = "0.4"
+primitives = { path = "../primitives" }
+chain = { path = "../chain"  }
+serialization = { path = "../serialization" }
+script = { path = "../script" }
+network = { path = "../network" }
+storage = { path = "../storage" }
+bitcrypto = { path = "../crypto" }
+
+[dev-dependencies]
+test-data = { path = "../test-data" }
+db = { path = "../db" }
+assert_matches = "1.3.0"
+chain = { path = "../chain", features = ["test-helpers"] }
